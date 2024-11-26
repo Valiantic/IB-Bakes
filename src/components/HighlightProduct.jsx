@@ -12,6 +12,9 @@ import loveCake from '../assets/images/love_cake.jpg';
 import valentineCake from '../assets/images/valentine_cake.jpg';
 import whiteCake from '../assets/images/white_cake.jpg';
 
+import daisyMeadow from '../assets/images/daisy_meadow.png';
+import pinkElegance from '../assets/images/pink_elegance_box.png';
+
 
 
 
@@ -24,15 +27,13 @@ const ProductCard = ({ image, price, title, description }) => (
   <div className="w-64 bg-white shadow-lg rounded-lg overflow-hidden">
     <div className="relative h-64 bg-gray-200">
       <img src={image} alt={title} className="h-full w-full object-cover" />
-      <span className="absolute bottom-2 right-2 bg-white px-2 py-1 text-gray-800 font-bold text-sm">
-      ₱{price}
-      </span>
+      
     </div>
     <div className="p-4">
       <h3 className="text-lg font-semibold">{title}</h3>
       <p className="text-sm text-gray-500">{description}</p>
       <button className="mt-4 w-full bg-rose-400 text-white font-semibold py-2 rounded-lg hover:bg-rose-600">
-        <a href="/login">Add to Bag</a>
+        <a href="https://www.facebook.com/profile.php?id=61551705886952">Check-Out</a>
       </button>
     </div>
   </div>
@@ -42,10 +43,10 @@ const ProductCard = ({ image, price, title, description }) => (
 // Store the product information here 
 const HiglightProduct = () => {
   const products = [
-    { image: valentineCake, price: 240, title: 'Happy Valentine Cake', description: 'Suprise your Loved at Valentine!' },
-    { image: loveCake, price: 250, title: 'Lovelots Cake', description: 'Send love with this treat!' },
-    { image: butterflyCake, price: 310, title: 'Butterfly Cake', description: 'Beauty outside sweet inside!' },
-    { image: whiteCake, price: 310, title: 'Gold Marble Cake', description: 'Luxurious taste with mallow fillings!' },
+    { image: valentineCake,  title: 'Romantic Ribbon', description: 'Celebrate love with this elegant cake! Topped with delicate white frosting swirls. this charming creation is a symbol of sweetness.' },
+    { image: daisyMeadow,  title: 'Daisy Meadow', description: 'A whimsical green ombre cake adorned with daisies and pearl accents, evoking a serene spring meadow.' },
+    { image: butterflyCake,  title: 'Rosy Delight', description: 'An elegant pink cake with a soft gradient, swirls, and golden pearl-like accents, exuding warmth and celebration.' },
+    { image: pinkElegance, title: 'Pink Elegance Box', description: 'A delightful set featuring a mini pink frosted cake accompanied by eight decadent cupcakes, this box exudes elegance and charm. ' },
   ];
 
   // Animation on scroll
@@ -64,7 +65,6 @@ const HiglightProduct = () => {
           <ProductCard
             key={index}
             image={product.image}
-            price={product.price}
             title={product.title}
             description={product.description}
           />
