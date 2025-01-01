@@ -25,7 +25,7 @@ const Nav = () => {
             <nav>
               <ul className="flex items-center gap-20 text-xl">
                 <li>
-                  <a className="text-gray-700 font-sans md:font-serif transition hover:text-rose-500/75 hover:text-2xl" href="#products"> Products </a>
+                  <a className="text-gray-700 font-sans md:font-serif transition hover:text-rose-500/75 hover:text-2xl" href="/products"> Products </a>
                 </li>
                 <li>
                   <a className="text-gray-700 font-sans md:font-serif transition hover:text-rose-500/75 hover:text-2xl" href="#about"> About </a>

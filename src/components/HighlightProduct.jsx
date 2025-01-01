@@ -33,7 +33,7 @@ const ProductCard = ({ image, price, title, description }) => (
       <h3 className="text-lg font-semibold">{title}</h3>
       <p className="text-sm text-gray-500">{description}</p>
       <button className="mt-4 w-full bg-rose-400 text-white font-semibold py-2 rounded-lg hover:bg-rose-600">
-        <a href="https://www.facebook.com/profile.php?id=61551705886952">Check-Out</a>
+        <a href="/products">Check-Out</a>
       </button>
     </div>
   </div>
