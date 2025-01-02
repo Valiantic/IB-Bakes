@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from 'react'
 
+// AOS
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 import '../App.css'
 import '../index.css'
 import Navbar from '../components/Navbar'
@@ -35,6 +39,14 @@ const Products = () => {
     );
     setFilteredProducts(filtered);
   }, [activeFilter]);
+
+   // Animation on scroll
+    useEffect(() => {
+      AOS.init({
+        duration: 2000, // animation duration in milliseconds
+        offset: 200,    // distance the element must be scrolled before it animates
+      });
+    }, []);
 
   const handleSearch = (searchTerm) => {
     const filtered = productsData.filter(product => 
@@ -91,7 +103,7 @@ const Products = () => {
           </div>
 
           {/* Product Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          <div data-aos="fade-up"  className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {filteredProducts
               .filter(product => activeFilter === 'all' || product.category === activeFilter)
               .map(product => (

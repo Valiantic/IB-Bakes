@@ -8,6 +8,7 @@ import HightlightProduct from '../components/HighlightProduct'
 import About from '../components/About'
 import Contacts from '../components/Contacts'
 import ScrollToTop from '../components/ScrollToTop'
+import SearchBar from '../components/SearchBar'
 
 const Home = () => {
   return (
