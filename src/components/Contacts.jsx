@@ -32,7 +32,7 @@ const Contacts = () => {
         </p>
 
         <a
-          href="/products"
+          href="href=/?page=products"
           className="mt-8 inline-block rounded-full border border-pink-600 px-12 py-3 text-sm font-medium text-rose-600 hover:bg-rose-600 hover:text-white focus:outline-none focus:ring active:bg-rose-500"
         >
           See Products

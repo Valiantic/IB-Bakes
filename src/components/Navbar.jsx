@@ -1,19 +1,16 @@
 import logo from "../assets/icons/logo.png";
-import { useNavigate } from "react-router-dom";
 
 const Nav = () => {
-  const navigate = useNavigate();
-
   return (
     <header className="bg-white rounded-[14px] bg-opacity-50">
       <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-9">
         <div className="flex h-18 items-center justify-between">
           <div className="md:flex md:items-center md:gap-12">
-            <a className="block text-teal-600" href="/">
+            <a className="block text-teal-600" href="/?page=home">
               <span className="sr-only">Home</span>
               <img className="h-20" src={logo} alt="Logo" />
             </a>
-            <a className="block" href="/">
+            <a className="block" href="/?page=home">
               <span className="sr-only">Home</span>
               <h1 className="flex hidden md:block font-sans md:font-serif text-2xl">
                 IB <span className="font-style: italic text-rose-600">Bakes</span>
@@ -25,7 +22,7 @@ const Nav = () => {
             <nav>
               <ul className="flex items-center gap-20 text-xl">
                 <li>
-                  <a className="text-gray-700 font-sans md:font-serif transition hover:text-rose-500/75 hover:text-2xl" href="/products"> Products </a>
+                  <a className="text-gray-700 font-sans md:font-serif transition hover:text-rose-500/75 hover:text-2xl" href="/?page=products"> Products </a>
                 </li>
                 <li>
                   <a className="text-gray-700 font-sans md:font-serif transition hover:text-rose-500/75 hover:text-2xl" href="#about"> About </a>
