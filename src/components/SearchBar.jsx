@@ -1,23 +1,29 @@
 import React, { useState } from 'react';
 import { FaSearch } from 'react-icons/fa';
 
-const SearchBar = () => {
-  const [searchTerm, setSearchTerm] = useState('');
+const SearchBar = ({ 
+  initialValue = '', 
+  placeholder = 'Search for cakes, pastries...', 
+  onSearch,
+  className = '' 
+}) => {
+  const [searchTerm, setSearchTerm] = useState(initialValue);
 
   const handleSearch = (e) => {
     e.preventDefault();
-    // Add search logic here
-    console.log('Searching for:', searchTerm);
+    if (onSearch) {
+      onSearch(searchTerm);
+    }
   };
 
   return (
-    <form onSubmit={handleSearch} className="w-full max-w-lg mx-auto">
+    <form onSubmit={handleSearch} className={`w-full max-w-lg mx-auto ${className}`}>
       <div className="relative flex items-center">
         <input
           type="text"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          placeholder="Search for cakes, pastries..."
+          placeholder={placeholder}
           className="w-full px-4 py-2 pl-10 pr-12 
             text-gray-700 bg-white border-2 border-rose-300 
             rounded-full outline-none focus:border-rose-500
