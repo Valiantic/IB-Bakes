@@ -114,7 +114,7 @@ const Products = () => {
               .filter(product => activeFilter === 'all' || product.category === activeFilter)
               .map(product => (
                 <div key={product.id} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                  <div className="relative pt-[100%]"> {/* Creates a square aspect ratio */}
+                  <div className="relative pt-[100%]"> 
                     <img 
                       src={product.image} 
                       alt={product.name}

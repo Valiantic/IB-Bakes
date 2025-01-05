@@ -21,14 +21,32 @@ const Nav = () => {
           <div className="hidden md:block ml-auto">
             <nav>
               <ul className="flex items-center gap-20 text-xl">
-                <li>
-                  <a className="text-gray-700 font-sans md:font-serif transition hover:text-rose-500/75 hover:text-2xl" href="/?page=products"> Products </a>
+                <li className="relative">
+                  <a className="text-gray-700 font-sans md:font-serif transition-colors hover:text-rose-500 
+                    after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 
+                    after:bg-rose-500 after:transition-all after:duration-300 
+                    hover:after:w-full" 
+                    href="/?page=products"> 
+                    Products 
+                  </a>
                 </li>
-                <li>
-                  <a className="text-gray-700 font-sans md:font-serif transition hover:text-rose-500/75 hover:text-2xl" href="#about"> About </a>
+                <li className="relative">
+                  <a className="text-gray-700 font-sans md:font-serif transition-colors hover:text-rose-500 
+                    after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 
+                    after:bg-rose-500 after:transition-all after:duration-300 
+                    hover:after:w-full" 
+                    href="#about"> 
+                    About 
+                  </a>
                 </li>
-                <li>
-                  <a className="text-gray-700 font-sans md:font-serif transition hover:text-rose-500/75 hover:text-2xl" href="#contacts"> Contacts </a>
+                <li className="relative">
+                  <a className="text-gray-700 font-sans md:font-serif transition-colors hover:text-rose-500 
+                    after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 
+                    after:bg-rose-500 after:transition-all after:duration-300 
+                    hover:after:w-full" 
+                    href="#contacts"> 
+                    Contacts 
+                  </a>
                 </li>
               </ul>
             </nav>
