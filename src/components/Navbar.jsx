@@ -1,4 +1,5 @@
 import logo from "../assets/icons/logo.png";
+import { Link } from 'react-router-dom';
 
 const Nav = () => {
   return (
@@ -6,47 +7,47 @@ const Nav = () => {
       <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-9">
         <div className="flex h-18 items-center justify-between">
           <div className="md:flex md:items-center md:gap-12">
-            <a className="block text-teal-600" href="/?page=home">
+            <Link className="block text-teal-600" to="/">
               <span className="sr-only">Home</span>
               <img className="h-20" src={logo} alt="Logo" />
-            </a>
-            <a className="block" href="/?page=home">
+            </Link>
+            <Link className="block" to="/">
               <span className="sr-only">Home</span>
               <h1 className="flex hidden md:block font-sans md:font-serif text-2xl">
                 IB <span className="font-style: italic text-rose-600">Bakes</span>
               </h1>
-            </a>
+            </Link>
           </div>
 
           <div className="hidden md:block ml-auto">
             <nav>
               <ul className="flex items-center gap-20 text-xl">
                 <li className="relative">
-                  <a className="text-gray-700 font-sans md:font-serif transition-colors hover:text-rose-500 
+                  <Link className="text-gray-700 font-sans md:font-serif transition-colors hover:text-rose-500 
                     after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 
                     after:bg-rose-500 after:transition-all after:duration-300 
                     hover:after:w-full" 
-                    href="/?page=products"> 
+                    to="/products"> 
                     Products 
-                  </a>
+                  </Link>
                 </li>
                 <li className="relative">
-                  <a className="text-gray-700 font-sans md:font-serif transition-colors hover:text-rose-500 
+                  <Link className="text-gray-700 font-sans md:font-serif transition-colors hover:text-rose-500 
                     after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 
                     after:bg-rose-500 after:transition-all after:duration-300 
                     hover:after:w-full" 
-                    href="#about"> 
+                    to="#about"> 
                     About 
-                  </a>
+                  </Link>
                 </li>
                 <li className="relative">
-                  <a className="text-gray-700 font-sans md:font-serif transition-colors hover:text-rose-500 
+                  <Link className="text-gray-700 font-sans md:font-serif transition-colors hover:text-rose-500 
                     after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 
                     after:bg-rose-500 after:transition-all after:duration-300 
                     hover:after:w-full" 
-                    href="#contacts"> 
+                    to="#contacts"> 
                     Contacts 
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </nav>

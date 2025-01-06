@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 // AOS
 import AOS from 'aos';
@@ -32,11 +33,11 @@ const ProductCard = ({ image, price, title, description }) => (
     <div className="p-4">
       <h3 className="text-lg font-semibold">{title}</h3>
       <p className="text-sm text-gray-500">{description}</p>
-      <a href="/?page=products">
+      <Link to="/products">
         <button className="mt-4 w-full bg-rose-400 text-white font-semibold py-2 rounded-lg hover:bg-rose-600">
           Check-Out
         </button>
-      </a>
+      </Link>
     </div>
   </div>
 

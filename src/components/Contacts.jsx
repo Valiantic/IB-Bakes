@@ -1,6 +1,6 @@
 import React from 'react'
 import contact_poster from '../assets/images/contact_poster.jpg'
-
+import { Link } from 'react-router-dom';
 import { useEffect } from 'react'
 
 // AOS
@@ -28,15 +28,15 @@ const Contacts = () => {
         </h2>
 
         <p className="mx-auto mt-4 max-w-sm text-gray-500">
-          𝙵𝚛𝚎𝚜𝚑 • 𝙳𝚎𝚕𝚒𝚌𝚒𝚘𝚞𝚜 • 𝚂𝚠𝚎𝚎𝚝 • 𝚃𝚊𝚜𝚝𝚢
+           𝙵𝚛𝚎𝚜𝚑 • 𝙳𝚎𝚕𝚒𝚌𝚒𝚘𝚞𝚜 • 𝚂𝚠𝚎𝚎𝚝 • 𝚃𝚊𝚜𝚝𝚢
         </p>
 
-        <a
-          href="/?page=products"
+        <Link
+          to="/products"
           className="mt-8 inline-block rounded-full border border-pink-600 px-12 py-3 text-sm font-medium text-rose-600 hover:bg-rose-600 hover:text-white focus:outline-none focus:ring active:bg-rose-500"
         >
           See Products
-        </a>
+        </Link>
       </div>
 
       <div className="mt-16 border-t border-gray-100 pt-8 sm:flex sm:items-center sm:justify-between lg:mt-24">

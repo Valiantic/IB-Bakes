@@ -43,7 +43,7 @@ const About = () => {
       <div className="lg:py-16">
         <article className="space-y-4 text-gray-600">
           <p>
-          Ib Bake's, owned by a college Filipina homebaker who found herself into baking way back in 2022. Ib Bake's officially starts its journey into business in 2023 and shares her progress on social media that support her growing business. 
+          IB Bake's, owned by a college Filipina homebaker who found herself into baking way back in 2022. Ib Bake's officially starts its journey into business in 2023 and shares her progress on social media that support her growing business. 
           </p>
 
           <p>
