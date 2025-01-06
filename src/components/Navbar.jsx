@@ -21,9 +21,9 @@ const Nav = () => {
 
           <div className="hidden md:block ml-auto">
             <nav>
-              <ul className="flex items-center gap-20 text-xl">
+              <ul className="flex items-center gap-20 text-xl font-poppins">
                 <li className="relative">
-                  <Link className="text-gray-700 font-sans md:font-serif transition-colors hover:text-rose-500 
+                  <Link className="text-gray-700 transition-colors hover:text-rose-500 
                     after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 
                     after:bg-rose-500 after:transition-all after:duration-300 
                     hover:after:w-full" 
@@ -32,16 +32,16 @@ const Nav = () => {
                   </Link>
                 </li>
                 <li className="relative">
-                  <Link className="text-gray-700 font-sans md:font-serif transition-colors hover:text-rose-500 
+                  <Link className="text-gray-700 transition-colors hover:text-rose-500 
                     after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 
                     after:bg-rose-500 after:transition-all after:duration-300 
                     hover:after:w-full" 
-                    to="#about"> 
-                    About 
+                    to="/faqs"> 
+                    FAQs
                   </Link>
                 </li>
                 <li className="relative">
-                  <Link className="text-gray-700 font-sans md:font-serif transition-colors hover:text-rose-500 
+                  <Link className="text-gray-700 transition-colors hover:text-rose-500 
                     after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 
                     after:bg-rose-500 after:transition-all after:duration-300 
                     hover:after:w-full" 
