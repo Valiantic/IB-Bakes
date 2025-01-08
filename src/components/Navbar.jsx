@@ -28,7 +28,16 @@ const Nav = () => {
 
           <div className="hidden md:block ml-auto">
             <nav>
-              <ul className="flex items-center gap-8 lg:gap-20 text-base lg:text-xl font-poppins">
+              <ul className="flex items-center gap-8 lg:gap-9 text-base lg:text-xl font-poppins">
+              <li className="relative">
+                  <Link className="text-gray-700 transition-colors hover:text-rose-500 
+                    after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 
+                    after:bg-rose-500 after:transition-all after:duration-300 
+                    hover:after:w-full" 
+                    to="/"> 
+                    Home
+                  </Link>
+                </li>
                 <li className="relative">
                   <Link className="text-gray-700 transition-colors hover:text-rose-500 
                     after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 
@@ -52,8 +61,8 @@ const Nav = () => {
                     after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 
                     after:bg-rose-500 after:transition-all after:duration-300 
                     hover:after:w-full" 
-                    to="#contacts"> 
-                    Contacts 
+                    to="/contacts"> 
+                    Contact Us
                   </Link>
                 </li>
               </ul>
@@ -81,10 +90,20 @@ const Nav = () => {
           </div>
         </div>
 
+
         {/* Mobile Menu */}
         <div className={`md:hidden ${isMobileMenuOpen ? 'block' : 'hidden'} transition-all duration-300 ease-in-out`}>
           <nav className="mt-2 pb-4">
             <ul className="flex flex-col items-center gap-2 text-base sm:text-lg font-poppins">
+              <li className="w-full text-center">
+                <Link 
+                  className="block w-full py-2 text-gray-700 hover:text-rose-500" 
+                  to="/"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                 Home                  
+                </Link>
+              </li>
               <li className="w-full text-center">
                 <Link 
                   className="block w-full py-2 text-gray-700 hover:text-rose-500" 
@@ -106,10 +125,10 @@ const Nav = () => {
               <li className="w-full text-center">
                 <Link 
                   className="block w-full py-2 text-gray-700 hover:text-rose-500" 
-                  to="#contacts"
+                  to="/contacts"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  Contacts
+                  Contact Us
                 </Link>
               </li>
             </ul>

@@ -6,7 +6,7 @@ import Navbar from '../components/Navbar'
 import Carousel from '../components/Carousel'
 import HightlightProduct from '../components/HighlightProduct'
 import About from '../components/About'
-import Contacts from '../components/Contacts'
+import Footer from '../components/Footer'
 import ScrollToTop from '../components/ScrollToTop'
 import SearchBar from '../components/SearchBar'
 
@@ -21,10 +21,10 @@ const Home = () => {
             <HightlightProduct />
           </div>
           <div className="my-8 sm:my-12">
-            <About />
+            <About/>
           </div>
           <div className="my-8 sm:my-12">
-            <Contacts />
+            <Footer/>
           </div>
         </div>
       </main>
