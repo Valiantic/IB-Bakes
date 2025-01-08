@@ -17,21 +17,15 @@ import valentineCake from '../assets/images/valentine_cake.jpg';
 import whiteCake from '../assets/images/white_cake.jpg';
 import daisyMeadow from '../assets/images/daisy_meadow.png';
 import pinkElegance from '../assets/images/pink_elegance_box.png';
-import marbleBlue from '../assets/images/marble_blue.jpg';
-import redRose from '../assets/images/red_rose.jpg';
 
 
 const Products = () => {
   // Define products array first
   const productsData = [
-    { id: 1, name: 'Romantic Ribbon',  category: 'bento', image: valentineCake },
-    { id: 2, name: 'Daisy Meadow',  category: 'combo', image: daisyMeadow },
-    { id: 3, name: 'Rosy Delight', category: 'bento', image: loveCake },
-    { id: 4, name: 'Pink Elegant Box', category: 'combo', image: pinkElegance },
-    { id: 5, name: 'White Deluxe', category: 'combo', image: whiteCake },
-    { id: 6, name: 'Butterfly Beauty', category: 'combo', image: butterflyCake },
-    { id: 7, name: 'Marble Blue', category: 'bento', image: marbleBlue },
-    { id: 8, name: 'Red Rose', category: 'bento', image: redRose },
+    { id: 1, name: 'Romantic Ribbon', price: '₱299', category: 'bento', image: valentineCake },
+    { id: 2, name: 'Daisy Meadow', price: '₱599', category: 'combo', image: daisyMeadow },
+    { id: 3, name: 'Rosy Delight', price: '₱299', category: 'bento', image: loveCake },
+    { id: 4, name: 'Pink Elegant Box', price: '₱599', category: 'combo', image: pinkElegance },
     // Add more products here...
   ];
 
@@ -114,7 +108,7 @@ const Products = () => {
               .filter(product => activeFilter === 'all' || product.category === activeFilter)
               .map(product => (
                 <div key={product.id} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                  <div className="relative pt-[100%]"> 
+                  <div className="relative pt-[100%]"> {/* Creates a square aspect ratio */}
                     <img 
                       src={product.image} 
                       alt={product.name}
@@ -123,8 +117,9 @@ const Products = () => {
                   </div>
                   <div className="p-4">
                     <h3 className="text-lg font-semibold text-gray-800">{product.name}</h3>
+                    <p className="text-rose-500 font-medium mt-2">{product.price}</p>
                     <button className="mt-4 w-full bg-rose-500 text-white py-2 rounded-full hover:bg-rose-600 transition-colors duration-300">
-                      Buy
+                      Add to Cart
                     </button>
                   </div>
                 </div>
