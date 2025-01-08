@@ -25,7 +25,7 @@ const ProductCard = ({ image, price, title, description }) => (
  
 
   // Product Card
-  <div className="w-64 bg-white shadow-lg rounded-lg overflow-hidden">
+  <div className="w-full max-w-sm mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
     <div className="relative h-64 bg-gray-200">
       <img src={image} alt={title} className="h-full w-full object-cover" />
       
@@ -61,9 +61,9 @@ const HiglightProduct = () => {
   }, []);
 
   return (
-    <div id="products" data-aos="fade-up" className="max-w-screen-lg mx-auto p-6">
-      <h2 className="text-4xl font-montserrat font-bold mb-4 mt-7 text-rose-600">Checkout our Best Sellers!</h2>
-      <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+    <div id="products" data-aos="fade-up" className="max-w-screen-xl mx-auto p-6">
+      <h2 className="text-4xl font-montserrat font-bold mb-8 mt-7 text-rose-600">Checkout our Best Sellers!</h2>
+      <div className="grid gap-8 md:gap-12 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 place-items-center">
         {products.map((product, index) => (
           <ProductCard
             key={index}
