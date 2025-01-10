@@ -2,6 +2,7 @@ import React from 'react';
 
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { productsData } from '../pages/Products';
 
 // AOS
 import AOS from 'aos';
@@ -33,12 +34,8 @@ const ProductCard = ({ image, price, title, description }) => (
 
 // Store the product information here 
 const HiglightProduct = () => {
-  const products = [
-    { image: valentineCake,  title: 'Romantic Ribbon', description: 'Celebrate love with this elegant cake! Topped with delicate white frosting swirls. this charming creation is a symbol of sweetness.' },
-    { image: daisyMeadow,  title: 'Daisy Meadow', description: 'A whimsical green ombre cake adorned with daisies and pearl accents, evoking a serene spring meadow.' },
-    { image: butterflyCake,  title: 'Rosy Delight', description: 'An elegant pink cake with a soft gradient, swirls, and golden pearl-like accents, exuding warmth and celebration.' },
-    { image: pinkElegance, title: 'Pink Elegance Box', description: 'A delightful set featuring a mini pink frosted cake accompanied by eight decadent cupcakes, this box exudes elegance and charm. ' },
-  ];
+  // Replace the hardcoded products with filtered productsData
+  const highlightedProducts = productsData.slice(0, 4); // Get first 4 products
 
   // Animation on scroll
   useEffect(() => {
@@ -52,12 +49,13 @@ const HiglightProduct = () => {
     <div id="products" data-aos="fade-up" className="max-w-screen-xl mx-auto p-6">
       <h2 className="text-4xl font-montserrat font-bold mb-8 mt-7 text-rose-600">Checkout our Best Sellers!</h2>
       <div className="grid gap-8 md:gap-12 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 place-items-stretch">
-        {products.map((product, index) => (
+        {highlightedProducts.map((product) => (
           <ProductCard
-            key={index}
+            key={product.id}
             image={product.image}
-            title={product.title}
+            title={product.name}
             description={product.description}
+            price={product.price}
           />
         ))}
       </div>

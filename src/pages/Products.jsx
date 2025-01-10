@@ -21,20 +21,19 @@ import valentineCake from '../assets/images/valentine_cake.jpg';
 import daisyMeadow from '../assets/images/daisy_meadow.png';
 import pinkElegance from '../assets/images/pink_elegance_box.png';
 
+// Move productsData outside the component and export it
+export const productsData = [
+  { id: 1, name: 'Romantic Ribbon', price: '₱299', category: 'bento', image: valentineCake, description: 'Celebrate love with this elegant cake! Topped with delicate white frosting swirls. this charming creation is a symbol of sweetness.' },
+  { id: 2, name: 'Daisy Meadow', price: '₱599', category: 'combo', image: daisyMeadow, description: 'A whimsical green ombre cake adorned with daisies and pearl accents, evoking a serene spring meadow.' },
+  { id: 3, name: 'Rosy Delight', price: '₱299', category: 'bento', image: loveCake, description: 'An elegant pink cake with a soft gradient, swirls, and golden pearl-like accents, exuding warmth and celebration.' },
+  { id: 4, name: 'Pink Elegant Box', price: '₱599', category: 'combo', image: pinkElegance, description: 'A delightful set featuring a mini pink frosted cake accompanied by eight decadent cupcakes, this box exudes elegance and charm.' },
+  { id: 5, name: 'Butterfly Cake', price: '₱299', category: 'bento', image: butterflyCake },
+  { id: 6, name: 'White Cake', price: '₱599', category: 'combo', image: whiteCake },
+  { id: 7, name: 'Oten Cake', price: '₱299', category: 'bento', image: otenCake },
+  { id: 8, name: 'Bilat Cake', price: '₱599', category: 'combo', image: bilatCake },
+];
 
 const Products = () => {
-  // Define products array first
-  const productsData = [
-    { id: 1, name: 'Romantic Ribbon', price: '₱299', category: 'bento', image: valentineCake },
-    { id: 2, name: 'Daisy Meadow', price: '₱599', category: 'combo', image: daisyMeadow },
-    { id: 3, name: 'Rosy Delight', price: '₱299', category: 'bento', image: loveCake },
-    { id: 4, name: 'Pink Elegant Box', price: '₱599', category: 'combo', image: pinkElegance },
-    { id: 5, name: 'Butterfly Cake', price: '₱299', category: 'bento', image: butterflyCake },
-    { id: 6, name: 'White Cake', price: '₱599', category: 'combo', image: whiteCake },
-    { id: 7, name: 'Oten Cake', price: '₱299', category: 'bento', image: otenCake },
-    { id: 8, name: 'Bilat Cake', price: '₱599', category: 'combo', image: bilatCake },
-  ];
-
   const [activeFilter, setActiveFilter] = useState('all');
   const [filteredProducts, setFilteredProducts] = useState(productsData);
   const [selectedProduct, setSelectedProduct] = useState(null);
