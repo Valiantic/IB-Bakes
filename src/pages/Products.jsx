@@ -9,12 +9,15 @@ import '../index.css'
 import Navbar from '../components/Navbar'
 import ScrollToTop from '../components/ScrollToTop'
 import SearchBar from '../components/SearchBar'
+import OrderModal from '../components/OrderModal';
 
 // Images
 import butterflyCake from '../assets/images/butterfly_cake.jpg';
+import whiteCake from '../assets/images/white_cake.jpg';
+import otenCake from '../assets/images/oten_cake.png';
+import bilatCake from '../assets/images/bilat_cake.jpg';
 import loveCake from '../assets/images/love_cake.jpg';
 import valentineCake from '../assets/images/valentine_cake.jpg';
-import whiteCake from '../assets/images/white_cake.jpg';
 import daisyMeadow from '../assets/images/daisy_meadow.png';
 import pinkElegance from '../assets/images/pink_elegance_box.png';
 
@@ -26,11 +29,16 @@ const Products = () => {
     { id: 2, name: 'Daisy Meadow', price: '₱599', category: 'combo', image: daisyMeadow },
     { id: 3, name: 'Rosy Delight', price: '₱299', category: 'bento', image: loveCake },
     { id: 4, name: 'Pink Elegant Box', price: '₱599', category: 'combo', image: pinkElegance },
-    // Add more products here...
+    { id: 5, name: 'Butterfly Cake', price: '₱299', category: 'bento', image: butterflyCake },
+    { id: 6, name: 'White Cake', price: '₱599', category: 'combo', image: whiteCake },
+    { id: 7, name: 'Oten Cake', price: '₱299', category: 'bento', image: otenCake },
+    { id: 8, name: 'Bilat Cake', price: '₱599', category: 'combo', image: bilatCake },
   ];
 
   const [activeFilter, setActiveFilter] = useState('all');
   const [filteredProducts, setFilteredProducts] = useState(productsData);
+  const [selectedProduct, setSelectedProduct] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   // Update filtered products when filter changes
   useEffect(() => {
@@ -54,6 +62,11 @@ const Products = () => {
       (activeFilter === 'all' || product.category === activeFilter)
     );
     setFilteredProducts(filtered);
+  };
+
+  const handleOrderClick = (product) => {
+    setSelectedProduct(product);
+    setIsModalOpen(true);
   };
 
   return (
@@ -118,8 +131,11 @@ const Products = () => {
                   <div className="p-4">
                     <h3 className="text-lg font-semibold text-gray-800">{product.name}</h3>
                     <p className="text-rose-500 font-medium mt-2">{product.price}</p>
-                    <button className="mt-4 w-full bg-rose-500 text-white py-2 rounded-full hover:bg-rose-600 transition-colors duration-300">
-                      Add to Cart
+                    <button 
+                      onClick={() => handleOrderClick(product)}
+                      className="mt-4 w-full bg-rose-500 text-white py-2 rounded-full hover:bg-rose-600 transition-colors duration-300 cursor-pointer"
+                    >
+                      Order
                     </button>
                   </div>
                 </div>
@@ -127,6 +143,13 @@ const Products = () => {
           </div>
         </div>
       </main>
+      
+      <OrderModal 
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        product={selectedProduct}
+      />
+      
       <ScrollToTop />
     </div>
   )

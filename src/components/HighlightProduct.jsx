@@ -9,38 +9,26 @@ import 'aos/dist/aos.css';
 
 // Images
 import butterflyCake from '../assets/images/butterfly_cake.jpg';
-import loveCake from '../assets/images/love_cake.jpg';
 import valentineCake from '../assets/images/valentine_cake.jpg';
-import whiteCake from '../assets/images/white_cake.jpg';
-
 import daisyMeadow from '../assets/images/daisy_meadow.png';
 import pinkElegance from '../assets/images/pink_elegance_box.png';
 
-
-
-
 // Passing props to ProductCard
 const ProductCard = ({ image, price, title, description }) => (
-
- 
-
-  // Product Card
-  <div className="w-full max-w-sm mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
-    <div className="relative h-64 bg-gray-200">
+  <div className="w-full max-w-sm mx-auto bg-white shadow-lg rounded-lg overflow-hidden h-full flex flex-col">
+    <div className="relative h-64 bg-gray-200 flex-shrink-0">
       <img src={image} alt={title} className="h-full w-full object-cover" />
-      
     </div>
-    <div className="p-4">
-      <h3 className="text-lg font-semibold">{title}</h3>
-      <p className="text-sm text-gray-500">{description}</p>
-      <Link to="/products">
-        <button className="mt-4 w-full bg-rose-400 text-white font-semibold py-2 rounded-lg hover:bg-rose-600">
+    <div className="p-4 flex flex-col flex-grow">
+      <h3 className="text-lg font-semibold mb-2">{title}</h3>
+      <p className="text-sm text-gray-500 flex-grow">{description}</p>
+      <Link to="/products" className="mt-4">
+        <button className="w-full bg-rose-400 text-white font-semibold py-2 rounded-lg hover:bg-rose-600 transition-colors">
           Check-Out
         </button>
       </Link>
     </div>
   </div>
-
 );
 
 // Store the product information here 
@@ -63,7 +51,7 @@ const HiglightProduct = () => {
   return (
     <div id="products" data-aos="fade-up" className="max-w-screen-xl mx-auto p-6">
       <h2 className="text-4xl font-montserrat font-bold mb-8 mt-7 text-rose-600">Checkout our Best Sellers!</h2>
-      <div className="grid gap-8 md:gap-12 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 place-items-center">
+      <div className="grid gap-8 md:gap-12 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 place-items-stretch">
         {products.map((product, index) => (
           <ProductCard
             key={index}
