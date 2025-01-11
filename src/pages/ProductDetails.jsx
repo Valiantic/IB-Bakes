@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 import Navbar from '../components/Navbar'
 import { productsData } from './Products'
 import ErrorPage from './ErrorPage'
@@ -63,6 +63,15 @@ const ProductDetails = () => {
     <div className="min-h-screen flex flex-col font-[Poppins]">
       <Navbar />
       <main className="flex-1 container mx-auto px-4 py-8 mt-4">
+        {/* Add Breadcrumbs */}
+        <nav className="flex mb-8 text-gray-600">
+          <Link to="/" className="hover:text-rose-500">Home</Link>
+          <span className="mx-2">&gt;</span>
+          <Link to="/products" className="hover:text-rose-500">Products</Link>
+          <span className="mx-2">&gt;</span>
+          <span className="text-rose-500">{product.name}</span>
+        </nav>
+
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row gap-8">
             <div className="md:w-1/2">
