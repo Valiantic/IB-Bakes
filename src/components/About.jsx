@@ -24,9 +24,9 @@ const About = () => {
 
   return (
     <section>
-  <div id="about"  data-aos="fade-right"  className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
+  <div id="about" className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
     <div className="max-w-3xl">
-      <h2 className="text-3xl text-rose-600 font-bold sm:text-4xl">
+      <h2 className="text-3xl text-rose-500 font-bold sm:text-4xl">
       "Satisfy your eyes and delight your tummy with IB Bake’s—Oh, so yummy!"
       </h2>
     </div>
