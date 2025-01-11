@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
 // AOS
 import AOS from 'aos';
@@ -9,7 +10,6 @@ import '../index.css'
 import Navbar from '../components/Navbar'
 import ScrollToTop from '../components/ScrollToTop'
 import SearchBar from '../components/SearchBar'
-import OrderModal from '../components/OrderModal';
 
 // Images
 import butterflyCake from '../assets/images/butterfly_cake.jpg';
@@ -36,8 +36,6 @@ export const productsData = [
 const Products = () => {
   const [activeFilter, setActiveFilter] = useState('all');
   const [filteredProducts, setFilteredProducts] = useState(productsData);
-  const [selectedProduct, setSelectedProduct] = useState(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
 
   // Update filtered products when filter changes
   useEffect(() => {
@@ -61,11 +59,6 @@ const Products = () => {
       (activeFilter === 'all' || product.category === activeFilter)
     );
     setFilteredProducts(filtered);
-  };
-
-  const handleOrderClick = (product) => {
-    setSelectedProduct(product);
-    setIsModalOpen(true);
   };
 
   return (
@@ -130,24 +123,18 @@ const Products = () => {
                   <div className="p-4">
                     <h3 className="text-lg font-semibold text-gray-800">{product.name}</h3>
                     <p className="text-rose-500 font-medium mt-2">{product.price}</p>
-                    <button 
-                      onClick={() => handleOrderClick(product)}
-                      className="mt-4 w-full bg-rose-500 text-white py-2 rounded-full hover:bg-rose-600 transition-colors duration-300 cursor-pointer"
+                    <Link 
+                      to={`/products/${product.id}`}
+                      className="mt-4 block w-full bg-rose-500 text-white py-2 rounded-full hover:bg-rose-600 transition-colors duration-300 text-center"
                     >
-                      Order
-                    </button>
+                      View Details
+                    </Link>
                   </div>
                 </div>
             ))}
           </div>
         </div>
       </main>
-      
-      <OrderModal 
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-        product={selectedProduct}
-      />
       
       <ScrollToTop />
     </div>
