@@ -13,7 +13,7 @@ const ProductDetails = () => {
   }
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col font-[Poppins]">
       <Navbar />
       <main className="flex-1 container mx-auto px-4 py-8 mt-4">
         <div className="max-w-6xl mx-auto">

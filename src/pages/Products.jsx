@@ -62,7 +62,7 @@ const Products = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col font-[Poppins]">
       <Navbar />
       <main className="flex-1">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -122,7 +122,6 @@ const Products = () => {
                   </div>
                   <div className="p-4">
                     <h3 className="text-lg font-semibold text-gray-800">{product.name}</h3>
-                    <p className="text-rose-500 font-medium mt-2">{product.price}</p>
                     <Link 
                       to={`/products/${product.id}`}
                       className="mt-4 block w-full bg-rose-500 text-white py-2 rounded-full hover:bg-rose-600 transition-colors duration-300 text-center"
