@@ -13,7 +13,6 @@ const ProductCard = ({ id, image, price, title, description }) => (
     <div className="p-4 flex flex-col flex-grow">
       <h3 className="text-lg font-semibold mb-2">{title}</h3>
       <p className="text-sm text-gray-500 flex-grow">{description}</p>
-      <p className="text-rose-500 font-medium my-2">{price}</p>
       <Link to={`/products/${id}`}>
         <button className="w-full bg-rose-400 text-white font-semibold py-2 rounded-lg hover:bg-rose-600 transition-colors">
           Check-Out

@@ -7,24 +7,40 @@ import ScrollToTop from '../components/ScrollToTop'
 
 const FAQData = [
   {
-    question: "What types of cakes do you offer?",
-    answer: "We offer a wide variety of cakes including custom birthday cakes, wedding cakes, cupcakes, and specialty desserts. All our cakes are freshly baked using premium ingredients."
+    question: " What sizes of cakes do you offer for regular cakes?",
+    answer: "We have the following sizes available for our regular cakes:\n\n• 4x4 inches (Bento Cake – perfect for personal treats or gifts)\n• 7x3 inches (great for small gatherings)\n• 7x5 inches (ideal for medium-sized celebrations)\n• 7x7 inches (perfect for larger parties or sharing with family and friends)"
   },
   {
     question: "How far in advance should I place my order?",
-    answer: "We recommend placing orders at least 48-72 hours in advance for regular cakes, and 2-3 weeks for wedding or special event cakes to ensure availability."
+    answer: "We recommend placing your order 48 to 72 hours in advance to ensure availability. For rush orders placed within 24 hours, a rush fee will be applied. This helps us prioritize your order and maintain the quality you deserve."
   },
   {
     question: "Do you offer delivery services?",
-    answer: "Yes, we offer delivery services within the city limits. Delivery fees vary based on location. Please contact us for specific delivery rates to your area."
+    answer: "Currently, we do not offer delivery. However, you can:\n\n• Pick up your order from our location\n• Meet up at an agreed-upon spot within a specific radius (fees may apply)"
   },
   {
-    question: "Can you accommodate dietary restrictions?",
-    answer: "Yes, we offer various options including gluten-free, vegan, and sugar-free cakes. Please specify your dietary requirements when placing your order."
+    question: "Where are you located?",
+    answer: "We are located at 537 Lower Moonlight, Gregoria De Jesus GMA, Cavite."
+  },
+  {
+    question: "Do you accept cashless payments?",
+    answer: "Yes, we accept payments through Maya and GCash for your convenience."
+  },
+  {
+    question: "Can I customize my cake design?",
+    answer: "Absolutely! We specialize in custom cakes. Share your design ideas, themes, or inspirations, and we’ll bring them to life."
   }
 ];
 
 const FAQItem = ({ question, answer, isOpen, onClick }) => {
+  // Convert \n to <br> tags
+  const formattedAnswer = answer.split('\n').map((line, i) => (
+    <React.Fragment key={i}>
+      {line}
+      {i < answer.split('\n').length - 1 && <br />}
+    </React.Fragment>
+  ));
+
   return (
     <div className="border-b border-gray-200">
       <button
@@ -43,10 +59,10 @@ const FAQItem = ({ question, answer, isOpen, onClick }) => {
       </button>
       <div
         className={`overflow-hidden transition-all duration-200 ${
-          isOpen ? 'max-h-48' : 'max-h-0'
+          isOpen ? 'max-h-96' : 'max-h-0'
         }`}
       >
-        <p className="p-4 text-gray-600">{answer}</p>
+        <p className="p-4 text-gray-600 text-justify">{formattedAnswer}</p>
       </div>
     </div>
   );
@@ -96,3 +112,4 @@ const FAQs = () => {
 };
 
 export default FAQs;
+
