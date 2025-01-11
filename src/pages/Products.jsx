@@ -23,14 +23,14 @@ import pinkElegance from '../assets/images/pink_elegance_box.png';
 
 // Move productsData outside the component and export it
 export const productsData = [
-  { id: 1, name: 'Romantic Ribbon', price: '₱299', category: 'bento', image: valentineCake, description: 'Celebrate love with this elegant cake! Topped with delicate white frosting swirls. this charming creation is a symbol of sweetness.' },
-  { id: 2, name: 'Daisy Meadow', price: '₱599', category: 'combo', image: daisyMeadow, description: 'A whimsical green ombre cake adorned with daisies and pearl accents, evoking a serene spring meadow.' },
-  { id: 3, name: 'Rosy Delight', price: '₱299', category: 'bento', image: loveCake, description: 'An elegant pink cake with a soft gradient, swirls, and golden pearl-like accents, exuding warmth and celebration.' },
-  { id: 4, name: 'Pink Elegant Box', price: '₱599', category: 'combo', image: pinkElegance, description: 'A delightful set featuring a mini pink frosted cake accompanied by eight decadent cupcakes, this box exudes elegance and charm.' },
-  { id: 5, name: 'Butterfly Cake', price: '₱299', category: 'bento', image: butterflyCake },
-  { id: 6, name: 'White Cake', price: '₱599', category: 'combo', image: whiteCake },
-  { id: 7, name: 'Oten Cake', price: '₱299', category: 'bento', image: otenCake },
-  { id: 8, name: 'Bilat Cake', price: '₱599', category: 'combo', image: bilatCake },
+  { id: 1, name: 'Romantic Ribbon',  category: 'bento', image: valentineCake, description: 'Celebrate love with this elegant cake! Topped with delicate white frosting swirls. this charming creation is a symbol of sweetness.' },
+  { id: 2, name: 'Daisy Meadow',  category: 'combo', image: daisyMeadow, description: 'A whimsical green ombre cake adorned with daisies and pearl accents, evoking a serene spring meadow.' },
+  { id: 3, name: 'Rosy Delight',  category: 'bento', image: loveCake, description: 'An elegant pink cake with a soft gradient, swirls, and golden pearl-like accents, exuding warmth and celebration.' },
+  { id: 4, name: 'Pink Elegant Box',  category: 'combo', image: pinkElegance, description: 'A delightful set featuring a mini pink frosted cake accompanied by eight decadent cupcakes, this box exudes elegance and charm.' },
+  { id: 5, name: 'Winx Flora',  category: 'bento', image: butterflyCake, description: 'Indulge in the delightful charm of the Winx Flora bento cake. Adorned with a captivating butterfly motif, this cake brings a whimsical touch to your dessert experience. Perfect for anyone looking to add a sprinkle of magic to their day.' },
+  { id: 6, name: 'Luxious White',  category: 'combo', image: whiteCake, description: 'The Luxious White cake is a sophisticated delight crafted for those with an impeccable taste. This combo cake features a pristine white exterior as elegant as it is delicious, making it an ideal centerpiece for any celebration.' },
+  { id: 7, name: 'Oten Cake',  category: 'bento', image: otenCake, description: 'The Oten Cake is a petite yet powerful flavor explosion wrapped in a simple package. As a bento cake, its designed for individual enjoyment, ensuring each bite is as delightful as the last. Perfect for a quick self-indulgence or a thoughtful gift.' },
+  { id: 8, name: 'Bilat Cake',  category: 'combo', image: bilatCake, description: 'The Bilat Cake is a versatile combo option that delivers both visual appeal and mouth-watering flavors. Its unique design and rich taste make it a must-have for those who appreciate a mixture of style and substance in their desserts.' },
 ];
 
 const Products = () => {

@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { productsData } from '../pages/Products';
 
 const ShopSimilar = ({ currentProductId }) => {
@@ -9,9 +8,14 @@ const ShopSimilar = ({ currentProductId }) => {
     .sort(() => Math.random() - 0.5)
     .slice(0, 4); // Show only 4 random products
 
+  const handleProductClick = (productId) => {
+    // Force a full page reload by changing window.location
+    window.location.href = `/products/${productId}`;
+  };
+
   return (
     <div className="mt-8 md:mt-16 mb-8 px-4 md:px-0">
-      <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-4 md:mb-6">You May Also Like</h2>
+      <h2 className="text-xl md:text-2xl font-bold text-rose-500 mb-4 md:mb-6">You May Also Like</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
         {shuffledProducts.map(product => (
           <div key={product.id} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
@@ -24,13 +28,12 @@ const ShopSimilar = ({ currentProductId }) => {
             </div>
             <div className="p-4">
               <h3 className="text-lg font-semibold text-gray-800">{product.name}</h3>
-              <p className="text-rose-500 font-medium mt-2">{product.price}</p>
-              <Link 
-                to={`/products/${product.id}`}
+              <button 
+                onClick={() => handleProductClick(product.id)}
                 className="mt-4 block w-full bg-rose-500 text-white py-2 rounded-full hover:bg-rose-600 transition-colors duration-300 text-center"
               >
                 View Details
-              </Link>
+              </button>
             </div>
           </div>
         ))}
