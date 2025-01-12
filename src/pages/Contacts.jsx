@@ -3,6 +3,7 @@ import '../App.css'
 import '../index.css'
 import Navbar from '../components/Navbar'
 import ScrollToTop from '../components/ScrollToTop'
+import Footer from '../components/Footer'
 
 const Contacts = () => {
   return (
@@ -100,6 +101,7 @@ const Contacts = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   )
 }

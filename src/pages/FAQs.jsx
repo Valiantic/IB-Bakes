@@ -4,6 +4,7 @@ import '../App.css'
 import '../index.css'
 import Navbar from '../components/Navbar'
 import ScrollToTop from '../components/ScrollToTop'
+import Footer from '../components/Footer'
 
 const FAQData = [
   {
@@ -107,6 +108,7 @@ const FAQs = () => {
         </div>
       </main>
       <ScrollToTop />
+      <Footer/>
     </div>
   );
 };

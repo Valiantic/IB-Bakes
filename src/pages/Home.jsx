@@ -6,9 +6,9 @@ import Navbar from '../components/Navbar'
 import Carousel from '../components/Carousel'
 import HightlightProduct from '../components/HighlightProduct'
 import About from '../components/About'
-import Footer from '../components/Footer'
+import More from '../components/More'
 import ScrollToTop from '../components/ScrollToTop'
-import SearchBar from '../components/SearchBar'
+import Footer from '../components/Footer'
 
 const Home = () => {
   return (
@@ -24,11 +24,12 @@ const Home = () => {
             <About/>
           </div>
           <div className="my-8 sm:my-12">
-            <Footer/>
+            <More/>
           </div>
         </div>
       </main>
       <ScrollToTop />
+      <Footer />
     </div>
   )
 }

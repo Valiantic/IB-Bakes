@@ -20,6 +20,7 @@ import loveCake from '../assets/images/love_cake.jpg';
 import valentineCake from '../assets/images/valentine_cake.jpg';
 import daisyMeadow from '../assets/images/daisy_meadow.png';
 import pinkElegance from '../assets/images/pink_elegance_box.png';
+import Footer from '../components/Footer';
 
 // Move productsData outside the component and export it
 export const productsData = [
@@ -136,6 +137,7 @@ const Products = () => {
       </main>
       
       <ScrollToTop />
+      <Footer />
     </div>
   )
 }
