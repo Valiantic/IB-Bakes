@@ -1,7 +1,6 @@
 import React from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-
 // pages
 import Home from './pages/Home'
 import ErrorPage from './pages/ErrorPage';

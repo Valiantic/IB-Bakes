@@ -1,7 +1,10 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { productsData } from '../pages/Products';
 
 const ShopSimilar = ({ currentProductId }) => {
+  const navigate = useNavigate();
+
   // Get all products except current one and shuffle them
   const shuffledProducts = productsData
     .filter(product => product.id !== currentProductId)
@@ -9,8 +12,7 @@ const ShopSimilar = ({ currentProductId }) => {
     .slice(0, 4); // Show only 4 random products
 
   const handleProductClick = (productId) => {
-    // Force a full page reload by changing window.location
-    window.location.href = `/products/${productId}`;
+    navigate(`/products/${productId}`);
   };
 
   return (
