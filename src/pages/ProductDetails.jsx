@@ -4,6 +4,7 @@ import Navbar from '../components/Navbar'
 import { productsData } from './Products'
 import ErrorPage from './ErrorPage'
 import ShopSimilar from '../components/ShopSimilar'
+import Swal from 'sweetalert2'
 
 const cakeBases = {
   chiffon: {
@@ -59,6 +60,44 @@ const ProductDetails = () => {
     }
     return null;
   }
+
+  const handleBuyNow = () => {
+    Swal.fire({
+      title: 'Order Details',
+      html: `
+        <div class="text-left">
+          <p class="mb-2"><strong>Product:</strong> ${product.name}</p>
+          <p class="mb-2"><strong>Base:</strong> ${selectedBase}</p>
+          <p class="mb-2"><strong>Flavor:</strong> ${selectedFlavor}</p>
+          <p class="mb-2"><strong>Size:</strong> ${selectedSize}</p>
+          <p class="mb-2"><strong>Price:</strong> ₱${getPrice().toLocaleString()}</p>
+        </div>
+      `,
+      icon: 'info',
+      showCancelButton: true,
+      confirmButtonText: 'Proceed to Order',
+      cancelButtonText: 'Cancel',
+      confirmButtonColor: '#f43f5e',
+      cancelButtonColor: '#666',
+      customClass: {
+        container: 'sweet-alert-container',
+        popup: 'sweet-alert-popup',
+        title: 'sweet-alert-title',
+        htmlContainer: 'sweet-alert-content',
+        confirmButton: 'sweet-alert-confirm',
+        cancelButton: 'sweet-alert-cancel'
+      }
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire({
+          title: 'Order Placed!',
+          text: 'Thank you for your order. We will contact you shortly.',
+          icon: 'success',
+          confirmButtonColor: '#f43f5e'
+        });
+      }
+    });
+  };
 
   return (
     <div className="min-h-screen flex flex-col font-[Poppins]">
@@ -170,6 +209,7 @@ const ProductDetails = () => {
                   !getPrice() ? 'opacity-50 cursor-not-allowed' : ''
                 }`}
                 disabled={!getPrice()}
+                onClick={handleBuyNow}
               >
                 Buy Now
               </button>
