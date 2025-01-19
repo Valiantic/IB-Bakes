@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useState } from 'react'
+import Swal from 'sweetalert2'
 import '../App.css'
 import '../index.css'
 import Navbar from '../components/Navbar'
@@ -6,6 +7,52 @@ import ScrollToTop from '../components/ScrollToTop'
 import Footer from '../components/Footer'
 
 const Contacts = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.id]: e.target.value
+    });
+  };
+
+  const isFormValid = () => {
+    return formData.name && formData.email && formData.subject && formData.message;
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    
+    if (isFormValid()) {
+      Swal.fire({
+        title: 'Thank you for inquiring \nMessage Sent!',
+        icon: 'success',
+        confirmButtonText: 'OK',
+        confirmButtonColor: '#f43f5e',
+        customClass: {
+          container: 'sweet-alert-container',
+          popup: 'sweet-alert-popup',
+          title: 'sweet-alert-title',
+          htmlContainer: 'sweet-alert-content',
+          confirmButton: 'sweet-alert-confirm'
+        }
+      }).then(() => {
+        // Reset form after successful submission
+        setFormData({
+          name: '',
+          email: '',
+          subject: '',
+          message: ''
+        });
+      });
+    }
+  };
+
   return (
     <div>
       <Navbar />
@@ -18,11 +65,13 @@ const Contacts = () => {
           </div>
           
           <div className="bg-white rounded-xl shadow-xl p-8">
-            <form className="space-y-8">
+            <form className="space-y-8" onSubmit={handleSubmit}>
               <div className="relative">
                 <input
                   type="text"
                   id="name"
+                  value={formData.name}
+                  onChange={handleChange}
                   className="peer w-full border-b-2 border-gray-300 text-gray-900 placeholder-transparent focus:outline-none focus:border-pink-600 py-2 px-2 transition-colors"
                   placeholder="Your name"
                   required
@@ -41,6 +90,8 @@ const Contacts = () => {
                 <input
                   type="email"
                   id="email"
+                  value={formData.email}
+                  onChange={handleChange}
                   className="peer w-full border-b-2 border-gray-300 text-gray-900 placeholder-transparent focus:outline-none focus:border-pink-600 py-2 px-2 transition-colors"
                   placeholder="Email address"
                   required
@@ -59,6 +110,8 @@ const Contacts = () => {
                 <input
                   type="text"
                   id="subject"
+                  value={formData.subject}
+                  onChange={handleChange}
                   className="peer w-full border-b-2 border-gray-300 text-gray-900 placeholder-transparent focus:outline-none focus:border-pink-600 py-2 px-2 transition-colors"
                   placeholder="Subject"
                   required
@@ -76,6 +129,8 @@ const Contacts = () => {
               <div className="relative">
                 <textarea
                   id="message"
+                  value={formData.message}
+                  onChange={handleChange}
                   rows="4"
                   className="peer w-full border-2 border-gray-300 rounded-lg text-gray-900 placeholder-transparent focus:outline-none focus:border-pink-600 py-2 px-2 transition-colors resize-none"
                   placeholder="Your message"
@@ -93,7 +148,12 @@ const Contacts = () => {
 
               <button
                 type="submit"
-                className="w-full py-3 px-6 text-white bg-pink-600 rounded-lg hover:bg-pink-700 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2 transition-colors font-medium text-lg"
+                disabled={!isFormValid()}
+                className={`w-full py-3 px-6 text-white rounded-lg transition-colors font-medium text-lg
+                  ${isFormValid() 
+                    ? 'bg-pink-600 hover:bg-pink-700' 
+                    : 'bg-gray-400 cursor-not-allowed'
+                  }`}
               >
                 Send Message
               </button>

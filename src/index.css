@@ -70,3 +70,49 @@ body {
     @apply font-montserrat text-slate-500 text-lg leading-7;
   }
 }
+
+/* SweetAlert2 Custom Styles */
+.sweet-alert-popup {
+  font-family: 'Poppins', sans-serif !important;
+  padding: 1.5rem !important;
+  width: 90% !important;
+  max-width: 32rem !important;
+}
+
+.sweet-alert-title {
+  font-size: 1.5rem !important;
+  margin-bottom: 1rem !important;
+}
+
+.sweet-alert-content {
+  margin: 1rem 0 !important;
+  font-size: 1rem !important;
+}
+
+.sweet-alert-confirm, 
+.sweet-alert-cancel {
+  padding: 0.75rem 1.5rem !important;
+  font-size: 1rem !important;
+  border-radius: 0.5rem !important;
+}
+
+@media (max-width: 640px) {
+  .sweet-alert-popup {
+    padding: 1rem !important;
+    margin: 1rem !important;
+  }
+  
+  .sweet-alert-title {
+    font-size: 1.25rem !important;
+  }
+  
+  .sweet-alert-content {
+    font-size: 0.875rem !important;
+  }
+  
+  .sweet-alert-confirm, 
+  .sweet-alert-cancel {
+    padding: 0.5rem 1rem !important;
+    font-size: 0.875rem !important;
+  }
+}
