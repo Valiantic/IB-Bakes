@@ -1,10 +1,13 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Swal from 'sweetalert2'
 import '../App.css'
 import '../index.css'
 import Navbar from '../components/Navbar'
 import ScrollToTop from '../components/ScrollToTop'
 import Footer from '../components/Footer'
+
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Contacts = () => {
   const [formData, setFormData] = useState({
@@ -53,6 +56,13 @@ const Contacts = () => {
     }
   };
 
+  useEffect(() => {
+    AOS.init({
+      duration: 3000, // animation duration in milliseconds
+      offset: 200,    // distance the element must be scrolled before it animates
+    });
+  }, []);
+
   return (
     <div>
       <Navbar />
@@ -60,7 +70,7 @@ const Contacts = () => {
       <div className="min-h-screen py-16 px-4 sm:px-6 lg:px-8 font-[Poppins]">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-extrabold text-rose-500 mb-2">Get in Touch</h2>
+            <h2 className="text-4xl font-extrabold text-rose-500 mb-2" data-aos="fade-up">Get in Touch</h2>
             <p className="text-lg text-gray-600">We'd love to hear from you!</p>
           </div>
           
