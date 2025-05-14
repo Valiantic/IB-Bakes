@@ -1,14 +1,14 @@
-# 🎂 IB Bakes: E-commerce Platform for Cakes & Pastries  
+# 🎂 IB Bakes: Home of Cakes & Pastries  
 
 ## 📌 Description  
-**IB Bakes** is a **Single Page Application (SPA)** designed for seamless online cake and pastry shopping 🍰. Built using **ReactJS, TailwindCSS, AOS, and SwiperJS**, it offers a visually stunning and responsive user experience. The **Kommunicate Chatbot** integration enhances customer engagement, providing instant support and recommendations.  
+**IB Bakes** is a beautifully designed **landing page** showcasing delicious cakes and pastries 🍰. Built with **ReactJS, TailwindCSS, AOS, and SwiperJS**, it delivers an engaging and smooth browsing experience for visitors. The **Kommunicate Chatbot** integration enhances user interaction, offering instant responses to inquiries about products, pricing, and availability.  
 
 ## 🚀 Features  
-- **Modern UI & Animations** – AOS & SwiperJS for smooth transitions and carousel effects.  
-- **Kommunicate Chatbot** – Provides real-time customer support and product recommendations.  
-- **Fast & Responsive Design** – TailwindCSS ensures optimized styling for all devices.  
-- **Dynamic Product Listings** – Customers can browse, filter, and purchase cakes with ease.  
-- **Secure Checkout** – Ensures a seamless payment process.  
+- **Visually Stunning UI** – Designed with TailwindCSS for responsiveness.  
+- **AOS (Animate on Scroll)** – Smooth animations enhance user experience.  
+- **SwiperJS Integration** – Interactive carousel for product highlights.  
+- **Kommunicate Chatbot** – Provides automated responses for customer inquiries.  
+- **Mobile-Friendly & Fast Loading** – Optimized for all devices.  
 
 ## 🔧 Installation  
 Clone the repository:  
